@@ -136,4 +136,51 @@ $books = array(
 
 foreach ($books as $title => $info) {
 	echo "$title was published in {$info['published']} by {$info['author']} and has {$info['pages']} pages\n";
+	if ($info['published'] > 1900) {
+		echo "$title was published after 1900\n";
+	}
 }
+
+
+//break
+
+for ($i = 0; $i < 100; $i++) {
+	echo $i . PHP_EOL;
+	if ($i == 10) {
+		break;
+	}
+}
+
+//continue
+
+$people = ["George", "John", "Adam", "Mark"];
+
+foreach ($people as $person) {
+	echo $person . PHP_EOL;
+	if (strlen($person) > 4) {
+		continue;
+	}
+	echo "^ He only has 4 letters in his name\n";
+}
+
+
+//switch
+
+$something = false;
+
+switch (gettype($something)) {
+	case 'integer':
+		echo "\$something is an integer\n";
+		break;
+	case 'array':
+		echo "\$something is an array\n";
+		break;
+	case 'boolean':
+		echo "\$something is a boolean\n";
+		break;
+	default: 
+		echo "I don't know what \$something is\n";
+
+}
+
+
